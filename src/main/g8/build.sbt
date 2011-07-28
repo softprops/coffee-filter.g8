@@ -4,6 +4,10 @@ name := "$name$"
 
 version := "0.1.0"
 
+seq(coffeescript.CoffeeScript.coffeeSettings: _*)
+
+targetDirectory in Coffee <<= (resourceManaged in Compile) { _ / "www" / "js" }
+
 libraryDependencies ++= Seq(
    "net.databinder" %% "unfiltered-jetty" % "$unfiltered_version$",
    "net.databinder" %% "unfiltered-filter" % "$unfiltered_version$",
