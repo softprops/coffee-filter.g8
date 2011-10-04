@@ -4,7 +4,9 @@ name := "$name$"
 
 version := "0.1.0"
 
-seq(coffeescript.CoffeeScript.coffeeSettings: _*)
+seq(coffeescript.CoffeeScript.coffeeSettings:_*)
+
+seq(lessSettings:_*)
 
 targetDirectory in Coffee <<= (resourceManaged in Compile) { _ / "www" / "js" }
 
