@@ -8,7 +8,7 @@ seq(coffeeSettings:_*)
 
 seq(lessSettings:_*)
 
-targetDirectory in Coffee <<= (resourceManaged in Compile) { _ / "www" / "js" }
+(resourceManaged in (Compile, CoffeeKeys.coffee)) <<= (crossTarget in Compile)(_ / "www" / "js")
 
 libraryDependencies ++= Seq(
    "net.databinder" %% "unfiltered-jetty" % "$unfiltered_version$",
