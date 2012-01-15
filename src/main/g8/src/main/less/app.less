@@ -1,21 +1,32 @@
-/* styles here */
-* { margin:0; padding:0; }
+@link-color: #FF297E;
+@link-color-hover: #35E7FF;
+@width: 500px;
+
+* {
+  margin:0;
+  padding:0;
+}
+
 body {
   font-family:helvetica, arial, san-serif;
 }
+
 a:link, a:visited {
-  color:#FF297E;
+  color: @link-color;
   text-decoration:none;
   -webkit-transition:color .25s;
 }
+
 a:hover {
-  color:#35E7FF;
+  color:@link-color-hover;
   -webkit-transition:color .25s;
 }
+
 #container {
-  width:500px;
+  width:@width;
   margin:1em auto;
 }
+
 h1 {
   display:none;
   margin-top:-620px;
