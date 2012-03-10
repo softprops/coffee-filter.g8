@@ -3,7 +3,7 @@ import unfiltered.response._
 
 import scala.xml
 
-new java.net.URL
+import java.net.URL
 
 object Page {
 
