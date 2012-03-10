@@ -3,11 +3,15 @@ import unfiltered.response._
 
 import scala.xml
 
+new java.net.URL
+
 object Page {
 
-  def assets = new java.net.URL(getClass.getResource("/www/robots.txt"), ".")
+  def assets = new URL(getClass.getResource("/www/robots.txt"), ".")
 
-  def apply(title: String)(styles: xml.NodeSeq)(scripts: xml.NodeSeq)(content: xml.NodeSeq) = Html(
+  def apply(title: String)(styles: xml.NodeSeq)(
+    scripts: xml.NodeSeq)(
+    content: xml.NodeSeq) = Html(
     <html>
       <head>
         <title>{ title }</title>
@@ -18,8 +22,9 @@ object Page {
         <div id="container">
         { content }
         </div>
-       <script type="text/javascript" src="/assets/js/app.js"></script> { scripts }
-      </body>
+       <script type="text/javascript" src="/assets/js/app.js"></script>{
+         scripts
+      }</body>
     </html>
   )
 }
